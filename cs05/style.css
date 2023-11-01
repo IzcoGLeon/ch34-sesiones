@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+body {
+  background-color: #F6F1F0;
+  font-family: Verdana, sans-serif;
+}
+
+h1,
+h3 {
+  color: #A48674;
+}
+
+p,
+ul {
+  color: #BBB18D;
+}
