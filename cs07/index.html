@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    console.log("Sesión Web07");
+    console.log("CH34");
+  </script>
+</head>
+
+<body>
+
+  <!-- boton que reestablezca a negro -->
+  <!-- boton que cambie a verde -->
+
+  <h1 id="title">Viernes temático de MIB</h1>
+
+  <button onclick="changeText()">Cambiar texto</button>
+  <button onclick="changeColorHandler('red')">Cambiar color</button>
+  <button onclick="changeColorHandler('black')">Cambiar a color original</button>
+  <button onclick="changeColorHandler('green')">Verde</button>
+  <br>
+
+  <p class="description" onclick="changeColorOfReference(this, 'white')">La muerte siempre proviene del corazón</p>
+  <p class="description" onclick="changeColorOfReference(this, 'white')">El silencio de los inocentes</p>
+  <p class="description" onclick="changeColorOfReference(this, 'white')">Kafka sobre la orilla</p>
+  <button onclick="resetText()">Reestablecer comentarios</button>
+
+  <script>
+
+    getReferenceTitle = () => {
+      return document.getElementById('title'); //trae referencia de este objeto
+    }
+
+    changeText = () => {
+      const refTitle = getReferenceTitle();
+      refTitle.innerHTML = "Me llamo <strong>Izco</strong>";
+    }
+
+    changeColorHandler = color => {
+      const refTitle = getReferenceTitle();
+      //refTitle.style.color = color;
+      changeColorOfReference(refTitle, color);
+    }
+
+    changeColorOfReference = (reference, color) => {
+      reference.style.color = color;
+    }
+
+    resetText = () => {
+      const refText = document.getElementsByClassName('description');
+      // for (let i = 0; i < refText.length; i++) {
+      //   changeColorOfReference(refText[i], 'black');
+      // }
+      refText.forEach(element => changeColorOfReference(element, "black"));
+
+    }
+
+    // dissapear = element => {
+    //   element.style.color = 'white';
+    // }
+
+
+
+  </script>
+</body>
+
+</html>
